@@ -1,0 +1,91 @@
+/*Setting Basic Dimensions to give
+gallery view */
+
+body {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-image: url("/static/images/background_image.jpg");
+    background-color: #cccccc;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+span {
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    font-family: Montserrat Thin;
+    text-shadow: rgb(255, 255, 255) 1px 1px 0, rgb(255, 255, 255) -1px -1px 0, rgb(255, 255, 255) -1px 1px 0, rgb(255, 255, 255) 1px -1px 0;
+    /* Свечение красного цвета */
+}
+
+.input-file {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    min-width: 150px;
+    height: 20px;
+    padding: 5px;
+    line-height: 20px;
+    text-align: center;
+    font-family: Montserrat Thin;
+    text-shadow: rgb(0, 0, 0) 1px 1px 0, rgb(0, 0, 0) -1px -1px 0, rgb(0, 0, 0) -1px 1px 0, rgb(0, 0, 0) 1px -1px 0;
+    border: rgb(255, 255, 255) 1px solid;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+}
+
+.input-file input {
+    font-family: 30px Montserrat Thin;
+    position: absolute;
+    top: 0;
+    left: -999em;
+}
+
+#container {
+    position: absolute;
+    border: 2px solid rgb(112, 112, 112);
+    border-style: inset;
+    width: 90%;
+    height: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    background: rgb(255, 255, 255)
+}
+
+
+/*picture view settings*/
+
+.main_view {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+    text-align: center;
+    border: 25px double transparent;
+}
+
+.main_view img {
+    width: 500px;
+    max-height: 500px;
+    height: auto;
+    object-fit: cover;
+}
+
+.side_view {
+    float: left;
+}
+
+.side_view img {
+    height: auto;
+    object-fit: contain;
+    border: 10px double transparent;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}

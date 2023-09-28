@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <span>
+        <title>Python Flask Upload Multiple Images and Display them</title>
+        <h2>Select multiple images to upload and display</h2>
+        <!-- file load -->
+        <form method="post" action="/" enctype="multipart/form-data">
+            <dl>
+                <p>
+                    <label class="input-file">
+                        Choose file
+                        <input type="file" name="files[]" multiple="true" autocomplete="off" value="new language" required>
+                    </label>
+                </p>
+            </dl>
+            <p>
+                <input type="submit" value="Submit">
+            </p>
+        </form>
+        <!-- file preview (important: first row depends on data name) -->
+        {% if img_data %}
+            <!-- Main view of our gallery --> 
+            <div class="main_view">
+                <img src="{{url_for('static', filename='uploads/'+img_data[-1].name)}}" id="main" alt="IMAGE">
+            </div>
+            <!-- All images with side view -->
+            <div id="container">
+            {% for current_data in img_data[::-1][1:] %}
+                <div class="side_view" >
+                    <img src="{{url_for('static', filename='uploads/'+current_data.name)}}" id="side" alt="IMAGE">
+                </div>
+            {% endfor %}
+            </div>
+        {% endif %}
+    </span>
+<body>
+</html>
